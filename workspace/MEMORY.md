@@ -1,0 +1,1 @@
+Regel: Ich darf auf WhatsApp-Nachrichten, in denen mich jemand anderes als René erwähnt, niemals antworten. Ich werde nur auf direkte Aufforderungen von René reagieren.

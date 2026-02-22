@@ -1,0 +1,17 @@
+# Secrets & credentials - NEVER commit
+credentials/
+openclaw.json
+openclaw.json.*
+openclaw.json.new
+
+# Runtime / session state
+agents/*/sessions/
+subagents/runs.json
+exec-approvals.json
+update-check.json
+devices/paired.json
+devices/pending.json
+
+# Workspace git history (tracked as plain files here)
+workspace/.git/
+workspace/.git/**

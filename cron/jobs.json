@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "afcf79ca-4ad6-4507-95c1-a4f4695f2fb5",
+      "agentId": "main",
+      "name": "Auto Update Check",
+      "enabled": true,
+      "createdAtMs": 1770359649942,
+      "updatedAtMs": 1770359649942,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Prüfe Updates für OpenClaw und berichte verfügbare Versionen.",
+        "model": "default"
+      },
+      "delivery": {
+        "mode": "announce"
+      },
+      "state": {
+        "nextRunAtMs": 1771837200000
+      }
+    },
+    {
+      "id": "ai-news-daily",
+      "agentId": "main",
+      "name": "Daily AI & Coding News",
+      "enabled": true,
+      "createdAtMs": 1770379980000,
+      "updatedAtMs": 1770416272207,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Recherchiere die wichtigsten AI & Coding News der letzten 24 Stunden. WICHTIG: Inkludiere IMMER mindestens 3-4 GitHub Trending AI/ML Repositories mit Star-Zahlen und konkreten Use Cases. Fokus auf: GitHub Trending AI/ML Repos (TOP PRIORITÄT), Neue AI Tools & Developer Tools, LLM APIs & SDKs, Code-Generation Models, AI-Coding-Assistenten (GitHub Copilot, Cursor, etc.), neue Libraries & Frameworks, DevTools-Startups, Produktivitäts-Tools für Developer. Quellen: GitHub Trending (täglich prüfen!), Hacker News, Product Hunt (AI Category), OpenAI/Anthropic Releases, Hugging Face Tools, r/MachineLearning, r/LocalLLaMA. Erstelle eine kompakte Zusammenfassung (max 10 Top-News) mit praktischen Links. Poste direkt in Slack #ai-news.",
+        "model": "default"
+      },
+      "delivery": {
+        "mode": "slack",
+        "slackChannel": "ai-news"
+      },
+      "state": {
+        "nextRunAtMs": 1771837200000
+      }
+    },
+    {
+      "id": "ch-news-daily",
+      "agentId": "main",
+      "name": "Daily Swiss Politics & Economy News",
+      "enabled": true,
+      "createdAtMs": 1770381793000,
+      "updatedAtMs": 1770381793000,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Recherchiere die wichtigsten Schweizer News aus Politik und Wirtschaft der letzten 24 Stunden. Fokus auf: Bundespolitik, Kantone, Wirtschaftsnews (Unternehmen, Banken, Pharma, Tech), Arbeitsmarkt, Energie, Verkehr, wichtige politische Entscheidungen. WICHTIG: Inkludiere auch die wichtigsten Nachrichten aus der Stadt und Region St. Gallen (Stadtpolitik, lokale Wirtschaft, Kultur, wichtige Ereignisse). Quellen: NZZ, Tagesanzeiger, SRF News, Blick, Watson, Handelszeitung, Finanz und Wirtschaft, swissinfo.ch, St. Galler Tagblatt, FM1Today. Erstelle eine kompakte Zusammenfassung (max 10 Top-News) mit Überschriften, kurzen Beschreibungen und Links. Poste direkt in Slack #ch-news.",
+        "model": "default"
+      },
+      "delivery": {
+        "mode": "slack",
+        "slackChannel": "ch-news"
+      },
+      "state": {
+        "nextRunAtMs": 1771837200000
+      }
+    }
+  ]
+}
