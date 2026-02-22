@@ -42,3 +42,34 @@ Every session, the agent reads these files in order before doing anything:
 - **TOOLS.md**: Environment-specific notes go here (device names, SSH aliases, preferred TTS voices), not in skill files.
 - **Projects** live as subdirectories (e.g., `Meteo/`) with their own `README.md` and standard subfolders (`docs/`, `data/`, `scripts/`, `research/`).
 - The agent may freely read, organize, and commit changes to this workspace without asking permission.
+
+## Roadmap: Ausbau zum umfangreichen persönlichen Assistenten
+
+### 🔴 Priorität 1 — Basis vervollständigen
+Diese Dateien sind noch weitgehend leer und limitieren die Qualität des Agenten stark:
+- **`IDENTITY.md`** — Name, Persönlichkeit, Vibe, Emoji noch nicht definiert
+- **`USER.md`** — René's Timezone, Interessen, Kontext, Vorlieben fehlen
+- **`MEMORY.md`** — Kaum befüllt; je mehr Kontext über René, desto besser der Agent
+- **`HEARTBEAT.md`** — Leer; proaktive Checks (E-Mail, Kalender, Wetter) hier eintragen
+
+### 🟡 Priorität 2 — Integrationen
+| Integration | Nutzen | Einstieg |
+|---|---|---|
+| **E-Mail** (Gmail/IMAP) | Lesen, zusammenfassen, beantworten | OpenClaw skill oder IMAP-Script |
+| **Google Calendar** | Termine kennen, erinnern, planen | Google API OAuth |
+| **GitHub** | PRs, Issues, Notifications | PAT bereits vorhanden |
+| **Home Assistant** | Smarthome steuern | Long-lived access token + REST API |
+| **ElevenLabs TTS** | Sprach-Antworten (in AGENTS.md erwähnt) | API Key in openclaw.json |
+| **Spotify / Plex** | Musik steuern | OAuth / Plex Token |
+
+### 🟢 Priorität 3 — Proaktivität & Automatisierung
+- **Morgen-Briefing** als Cron-Job: Wetter + Kalender + wichtige News zusammengefasst
+- **Wöchentliche Zusammenfassung** (Freitag): Was lief diese Woche?
+- **HEARTBEAT.md** mit rotierenden Checks: E-Mail → Kalender → GitHub → Wetter
+- **Weitere Sub-Agents** für spezifische Domänen (analog zum Diskussions-Bot)
+- **Memory-Maintenance**: Heartbeat nutzen um `MEMORY.md` aus Daily-Logs zu destillieren
+
+### Aktuell laufende Cron-Jobs
+- Daily AI & Coding News → Slack #ai-news (09:00)
+- Daily Swiss Politics & Economy News → Slack (09:00)
+- Auto Update Check → announce (09:00)
